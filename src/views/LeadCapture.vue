@@ -115,7 +115,7 @@ const submitLead = async () => {
 
 .capture-container {
   width: 100%;
-  max-width: 420px;
+  max-width: 100%;
   background-color: white;
   padding: 2.5rem;
   border-radius: 12px;
