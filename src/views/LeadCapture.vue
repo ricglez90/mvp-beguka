@@ -105,6 +105,7 @@ const submitLead = async () => {
   --c-purple: #8d3bc6;
 
   min-height: 100vh;
+  min-width: 600 px;
   background-color: var(--c-light);
   display: flex;
   align-items: center;
@@ -115,7 +116,7 @@ const submitLead = async () => {
 
 .capture-container {
   width: 100%;
-  max-width: 100%;
+  max-width: 600px;
   background-color: white;
   padding: 2.5rem;
   border-radius: 12px;
