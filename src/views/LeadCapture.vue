@@ -104,6 +104,7 @@ const submitLead = async () => {
   --c-blue: #00abf3;
   --c-purple: #8d3bc6;
 
+  width: 100vw;
   min-height: 100vh;
   min-width: 600 px;
   background-color: var(--c-light);

@@ -32,6 +32,7 @@
   --c-green: #89cb72;
   --c-blue: #00abf3;
 
+  width: 100vw;
   min-height: 100vh;
   background-color: var(--c-light);
   display: flex;

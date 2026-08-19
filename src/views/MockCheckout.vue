@@ -110,7 +110,7 @@ const processMockPayment = async (status) => {
   --c-green: #89cb72;
   --c-blue: #00abf3;
   --c-purple: #8d3bc6;
-
+  width: 100vw;
   min-height: 100vh;
   background-color: var(--c-dark); /* Fondo oscuro para dar sensación de cambio de plataforma */
   display: flex;
