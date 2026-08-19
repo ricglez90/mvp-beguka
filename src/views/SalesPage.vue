@@ -11,7 +11,7 @@ const isLoading = ref(false)
 onMounted(() => {
   leadEmail.value = route.query.email
   if (!leadEmail.value) {
-    router.push('/')
+    router.push({ name: 'capture' })
   }
 })
 
@@ -68,9 +68,9 @@ const initiateCheckout = () => {
 
 
 
-      <button @click="router.push('/')" class="decline-button" :disabled="isLoading">
-        No gracias, me conformo con el material gratuito por ahora
-      </button>
+     <button @click="router.push({ name: 'capture' })" class="decline-button" :disabled="isLoading">
+      No gracias, me conformo con el material gratuito por ahora
+    </button>
     </div>
   </div>
 </template>

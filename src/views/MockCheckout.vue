@@ -19,7 +19,7 @@ onMounted(() => {
   productId.value = route.query.product
   
   if (!leadEmail.value) {
-    router.push('/')
+    router.push({ name: 'capture' })
   }
 })
 
