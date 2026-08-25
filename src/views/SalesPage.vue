@@ -39,7 +39,7 @@ const initiateCheckout = () => {
       
       <div class="presale-badge">Lanzamiento Oficial: Próximamente</div>
       
-      <h2>Asegura la Guía Completa a Mitad de Precio</h2>
+      <h2>Muy pronto: Guía Completa</h2>
       
       <p class="pitch">
         El material que acabas de pedir te dará las bases, pero nuestra <strong>Guía Práctica Completa</strong> te dará el plan paso a paso. 
