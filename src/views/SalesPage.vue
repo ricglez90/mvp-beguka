@@ -42,7 +42,7 @@ const initiateCheckout = () => {
       <h2>Asegura la Guía Completa a Mitad de Precio</h2>
       
       <p class="pitch">
-        El material que acabas de pedir te dará las bases, pero nuestra <strong>Guía Práctica de Intervención</strong> te dará el plan paso a paso. 
+        El material que acabas de pedir te dará las bases, pero nuestra <strong>Guía Práctica Completa</strong> te dará el plan paso a paso. 
         Actualmente estamos dando los últimos toques a la versión final.
       </p>
 
@@ -50,20 +50,20 @@ const initiateCheckout = () => {
         <div class="product-info">
           <h3>¿Qué incluirá la versión completa?</h3>
           <ul class="benefits">
-            <li>✓ Ejercicios prácticos de 5 minutos</li>
-            <li>✓ Scripts exactos de qué decir en momentos de crisis</li>
-            <li>✓ Formatos imprimibles (Color y B/N)</li>
-            <li>✓ Acceso anticipado antes que el público general</li>
+            <li>✓ Ejercicios prácticos para seguir durante 10 semanas</li>
+            <li>✓ Manual de padres para el seguimiento</li>
+            <li>✓ Formatos disponibles: Color y Coloreable (B/N)</li>
+            <!-- <li>✓ Acceso anticipado antes que el público general</li> -->
           </ul>
         </div>
         
-        <div class="urgency-box">
+        <!-- <div class="urgency-box">
           <p><strong>Oferta exclusiva de preventa:</strong></p>
           <div class="price-tag">
             <span class="original-price">$30 USD</span>
             <span class="discount-price">$15 USD</span>
           </div>
-        </div>
+        </div> -->
       </div>
 
 
