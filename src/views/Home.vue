@@ -11,7 +11,7 @@
         <div class="cards-container">
           <ServiceCard 
             title="Manuales de Apoyo"
-            description="Descarga nuestras guías prácticas de 2 semanas para fortalecer la autoestima y validar emociones sin perder la paciencia."
+            description="Descarga nuestras guías prácticas para fortalecer la autoestima y validar emociones sin perder la paciencia."
             badge="Gratis"
             btnText="Descargar Manual"
             headerColor="#89cb72"
@@ -30,7 +30,7 @@
 
       <!-- SECCIÓN 2: Acerca de -->
       <section id="acerca-de" class="section alt-section">
-        <h2 class="section-title">Acerca de la Narradora</h2>
+        <h2 class="section-title">¿Qué es Beguka?</h2>
         <div class="section-content text-center">
           <p>No somos psicólogos ni terapeutas de traje. Somos guías de aventura.</p>
           <p>Creemos que la lógica de los adultos rara vez funciona con los niños. Por eso, hemos creado un personaje que habla en su idioma para ayudarlos a descubrir que sus diferencias son, en realidad, sus mayores superpoderes.</p>
@@ -48,7 +48,7 @@
       <section id="contacto" class="section alt-section text-center">
         <h2 class="section-title">¿Necesitas ayuda?</h2>
         <p class="section-content">Mándanos un mensaje y te responderemos antes de que termine la próxima misión.</p>
-        <a href="mailto:hola@beguka.com" class="action-btn">hola@beguka.com</a>
+        <a href="mailto:contacto.beguka@gmail.com" class="action-btn">contacto.beguka@gmail.com</a>
       </section>
     </main>
 
@@ -63,6 +63,20 @@ import ServiceCard from '@/components/ServiceCard.vue';
 </script>
 
 <style>
+#app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block; /* Vite a veces lo pone en flex */
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita cualquier scroll horizontal accidental */
+}
 /* CSS GLOBAL PARA EL COMPORTAMIENTO DE LA SPA */
 html {
   scroll-behavior: smooth;

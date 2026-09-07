@@ -26,8 +26,8 @@
 .nav-brand {
   font-size: 2rem;
   font-weight: 900;
-  color: #00abf3;
-  text-shadow: 2px 2px 0px #07002C;
+  color: #07002C;
+  /* text-shadow: 2px 2px 0px #07002C; */
 }
 
 .nav-links {
