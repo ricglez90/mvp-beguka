@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ComingSoon from '../views/ComingSoon.vue'
+// import ComingSoon from '../views/ComingSoon.vue'
+import Home  from '@/views/Home.vue'
 import LeadCapture from '../views/LeadCapture.vue'
 import SalesPage from '../views/SalesPage.vue'
 import MockCheckout from '../views/MockCheckout.vue'
@@ -10,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: ComingSoon
+      component: Home
     },
     {
       // Esta es la nueva URL que compartirás en tus redes sociales
