@@ -11,18 +11,21 @@
 </template>
 
 <style scoped>
+
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   background-color: #fffae4;
   border-bottom: 4px solid #07002C;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px;
+  box-sizing: border-box;
   z-index: 100;
 }
-
 .nav-brand {
   font-size: 2rem;
   font-weight: 900;

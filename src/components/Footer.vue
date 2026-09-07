@@ -1,35 +1,42 @@
 <template>
   <footer class="footer">
-    <div class="footer-content">
-      <h2 class="footer-brand">Beguka</h2>
-      <p>Acompañando la aventura de crecer.</p>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Beguka. Todos los derechos reservados.</p>
-    </div>
+    <span class="footer-brand">Beguka</span>
+    <span class="footer-copy">&copy; 2026 Todos los derechos reservados.</span>
   </footer>
 </template>
 
 <style scoped>
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #07002C;
   color: #fffae4;
-  padding: 40px 20px 20px;
-  text-align: center;
-  border-top: 4px solid #f8bb4a;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #f8bb4a;
+  box-sizing: border-box;
+  z-index: 100;
+  font-size: 0.85rem;
 }
 
 .footer-brand {
   color: #00abf3;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-weight: 900;
+  font-size: 1.1rem;
 }
 
-.footer-bottom {
-  margin-top: 30px;
-  border-top: 2px solid rgba(255, 250, 228, 0.1);
-  padding-top: 20px;
-  font-size: 0.9rem;
+.footer-copy {
   opacity: 0.8;
+}
+
+/* En celulares, ocultamos el texto largo para que no se amontone */
+@media (max-width: 480px) {
+  .footer-copy {
+    font-size: 0.75rem;
+  }
 }
 </style>

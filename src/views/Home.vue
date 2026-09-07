@@ -41,7 +41,9 @@
       <section id="comunidad" class="section text-center">
         <h2 class="section-title">Únete a la Misión</h2>
         <p class="section-content">No estás solo en esto. Miles de papás están aprendiendo a cambiar los regaños por mejores historias.</p>
-        <a href="https://instagram.com/tu-perfil" target="_blank" class="action-link">Síguenos en Instagram</a>
+        <h3 class="section-title">Síguemos en:</h3>
+        <a href="https://www.instagram.com/betilu.beguka/" target="_blank" class="action-link">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61593861926722" target="_blank" class="action-link">Facebook</a>
       </section>
 
       <!-- SECCIÓN 4: Contacto -->
@@ -98,13 +100,14 @@ body {
 
 .section {
   padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%; /* Forzamos a que el fondo llegue de orilla a orilla siempre */
+  box-sizing: border-box; /* Evita que el padding cause un scroll horizontal */
+  margin: 0; 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .alt-section {
   background-color: #07002C;
   color: #fffae4;
@@ -192,5 +195,37 @@ body {
 
 .action-btn:hover {
   transform: translateY(-3px);
+}
+
+/* 1. Compensa el espacio de los menús fijos */
+main {
+  padding-top: 75px; /* Alto del Navbar */
+  padding-bottom: 45px; /* Alto del Footer compacto */
+}
+
+/* 2. Textura de cuaderno para secciones claras (Inicio, Comunidad) */
+.section:not(.alt-section) {
+  background-color: #fffae4;
+  /* Dibuja la línea roja vertical a los 40px y las líneas azules horizontales cada 30px */
+  background-image: 
+    linear-gradient(90deg, transparent 40px, rgba(234, 67, 53, 0.4) 40px, rgba(234, 67, 53, 0.4) 42px, transparent 42px),
+    linear-gradient(rgba(0, 171, 243, 0.15) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 30px;
+}
+
+/* 3. Textura de cuaderno para secciones oscuras (Acerca de, Contacto) */
+.alt-section {
+  background-color: #07002C;
+  /* Dibuja la línea amarilla vertical y líneas crema tenues horizontales */
+  background-image: 
+    linear-gradient(90deg, transparent 40px, rgba(248, 187, 74, 0.4) 40px, rgba(248, 187, 74, 0.4) 42px, transparent 42px),
+    linear-gradient(rgba(255, 250, 228, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 30px;
+}
+
+/* (Opcional) Aseguramos que el contenido principal de la sección quede por encima del fondo */
+.section-content, .hero-title, .hero-subtitle, .cards-container, .section-title {
+  position: relative;
+  z-index: 2;
 }
 </style>
