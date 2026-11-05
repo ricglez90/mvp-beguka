@@ -9,21 +9,28 @@
         <p class="hero-subtitle">Recursos digitales para acompañar la crianza y crear un lugar seguro a través del poder de las historias.</p>
         
         <div class="cards-container">
+          <!-- TARJETA 1: Guía Gratis -->
           <ServiceCard 
+            @click="navegarA('capture')"
             title="Manuales de Apoyo"
             description="Descarga nuestras guías prácticas para fortalecer la autoestima y validar emociones sin perder la paciencia."
             badge="Gratis"
             btnText="Descargar Manual"
             headerColor="#89cb72"
             :isAvailable="true"
+            class="interactive-card"
           />
+          
+          <!-- TARJETA 2: Portal de Historias (Storyteller ya disponible) -->
           <ServiceCard 
+            @click="navegarA('StorytellerStart')"
             title="Portal de Historias"
             description="Un universo interactivo donde las narrativas se adaptan para ayudar a tus hijos a enfrentar sus propios retos."
-            badge="Próximamente"
-            btnText="En Construcción"
+            badge="¡Nuevo!"
+            btnText="Entrar al Portal"
             headerColor="#f8bb4a"
-            :isAvailable="false"
+            :isAvailable="true"
+            class="interactive-card"
           />
         </div>
       </section>
@@ -59,9 +66,18 @@
 </template>
 
 <script setup>
-import Navbar from '@/components/Navbar.vue';
-import Footer from '@/components/Footer.vue';
-import ServiceCard from '@/components/ServiceCard.vue';
+// 1. Importamos useRouter para poder navegar entre páginas
+import { useRouter } from 'vue-router'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
+import ServiceCard from '@/components/ServiceCard.vue'
+
+const router = useRouter()
+
+// 2. Función que recibe el nombre de la ruta y nos redirige
+const navegarA = (nombreRuta) => {
+  router.push({ name: nombreRuta })
+}
 </script>
 
 <style>
@@ -227,5 +243,14 @@ main {
 .section-content, .hero-title, .hero-subtitle, .cards-container, .section-title {
   position: relative;
   z-index: 2;
+}
+
+.interactive-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 </style>
