@@ -15,6 +15,9 @@ const showInstructions = ref(false) // NUEVO: Controla cuándo mostrar la guía
 const digitalStory = ref(null)
 const pdfBase64Data = ref(null)
 
+const availableCredits = ref(0)
+const isLoadingCredits = ref(true)
+
 const ageOptions = [
   { value: '3-5', label: '3 a 5 años (Preescolar)' },
   { value: '6-8', label: '6 a 8 años (Infantil)' },
@@ -140,6 +143,31 @@ const handleRequestCredits = async () => {
     }
   }
 }
+
+// Función para obtener los créditos actuales del usuario
+const fetchCredits = async () => {
+  try {
+    const { data: { session } } = await supabaseStoryteller.auth.getSession()
+    if (!session) return
+
+    const { data, error } = await supabaseStoryteller
+      .from('profiles')
+      .select('credits_available')
+      .eq('id', session.user.id)
+      .single()
+    
+    if (data) availableCredits.value = data.credits_available
+  } catch (error) {
+    console.error('Error obteniendo créditos:', error)
+  } finally {
+    isLoadingCredits.value = false
+  }
+}
+
+// Ejecutar al cargar la página
+onMounted(() => {
+  fetchCredits()
+})
 </script>
 
 <template>
@@ -147,7 +175,17 @@ const handleRequestCredits = async () => {
     
     <!-- 1. VISTA DEL FORMULARIO (Se oculta si ya hay un cuento digital) -->
     <div v-if="!digitalStory" class="form-card">
-      <h2 class="title">Nueva Historia</h2>
+      <!-- <h2 class="title">Nueva Historia</h2> -->
+       <div class="header-with-credits">
+        <div>
+          <h2 class="title">Nueva Historia</h2>
+          <p class="subtitle">Configura el cuento de esta noche en simples pasos.</p>
+        </div>
+        
+        <div v-if="!isLoadingCredits" class="credits-badge">
+          ⭐ {{ availableCredits }} créditos
+        </div>
+      </div>
       <p class="subtitle">Configura el cuento de esta noche en simples pasos.</p>
 
       <form @submit.prevent="handleGenerate" class="story-form">
@@ -407,4 +445,22 @@ const handleRequestCredits = async () => {
 .reader-actions { margin-top: 2rem; display: flex; justify-content: center; }
 .download-btn { background-color: #333; color: white; border: none; padding: 1rem 1.5rem; font-size: 1rem; font-weight: bold; border-radius: 12px; cursor: pointer; width: 100%; transition: background 0.2s; }
 .download-btn:hover { background-color: #000; }
+
+
+.header-with-credits {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.credits-badge {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid #ffeeba;
+}
 </style>
