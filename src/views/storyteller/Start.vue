@@ -46,7 +46,7 @@ const handleGenerate = async () => {
 
   const payload = { nombre: childName.value, edad: childAge.value, tema: selectedTheme.value, usaFantasia: useFantasy.value }
   
-  const respuesta = await fetch('${import.meta.env.VITE_API_URL}/api/generar-cuento', {
+  const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/api/generar-cuento`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${session.access_token}` },
     body: JSON.stringify(payload)
@@ -118,7 +118,7 @@ const handleRequestCredits = async () => {
     const { data: { session } } = await supabaseStoryteller.auth.getSession()
     
     // Llamamos al backend de Node.js
-    const respuesta = await fetch('${import.meta.env.VITE_API_URL}/api/solicitar-creditos', {
+    const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/api/solicitar-creditos`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${session.access_token}`
