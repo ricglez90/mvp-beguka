@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { supabaseStoryteller } from '@/services/supabaseStoryteller'
 
 const childName = ref('')
@@ -17,6 +17,7 @@ const pdfBase64Data = ref(null)
 
 const availableCredits = ref(0)
 const isLoadingCredits = ref(true)
+
 
 const ageOptions = [
   { value: '3-5', label: '3 a 5 años (Preescolar)' },
